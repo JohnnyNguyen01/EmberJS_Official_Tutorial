@@ -1,20 +1,21 @@
 {
-  "appId": "com.example.app",
-  "appName": "ember-capacitor-app",
-  "bundledWebRuntime": false,
-  "npmClient": "yarn",
-  "webDir": "dist",
-  "server": {
-    "url": "http://localhost:4200",
-    "allowNavigation": [
-      "example.org",
-      "*.example.org"
-    ]
-  },
-  "plugins": {
-    "SplashScreen": {
-      "launchShowDuration": 0
-    }
-  },
-  "cordova": {}
+    "appId": "com.example.app",
+    "appName": "ember-capacitor-app",
+    "bundledWebRuntime": false,
+    "npmClient": "yarn",
+    "webDir": "dist",
+    "server": {
+        "url": "http://localhost:4200",
+        "cleartext": true,
+        "allowNavigation": [
+            "example.org",
+            "*.example.org"
+        ]
+    },
+    "plugins": {
+        "SplashScreen": {
+            "launchShowDuration": 0
+        }
+    },
+    "cordova": {}
 }
