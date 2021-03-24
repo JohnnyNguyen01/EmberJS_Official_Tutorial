@@ -97,17 +97,15 @@ export default class RentalImageComponent extends Component {
 
 #### Using these in a component
 ```hbs
-{{#if this.isLarge}}
-<button type="button" class="image large" {{on "click" this.toggleSize}}>
-    <img ...attributes />
-    <small>View Smaller</small>
+<button 
+    type="button" 
+    class="image 
+    {{if this.isLarge "large"}}" 
+    {{on "click" this.toggleSize}}>
+        <img ...attributes />
+        <small>View {{if this.isLarge "Smaller" "Larger"}}</small>
 </button>
-{{else}}
-<button type="button" class="image" {{on "click" this.toggleSize}}>
-    <img ...attributes />
-    <small>View Larger</small>
-</button>
-{{/if}}
+
 ```
 
 ## Part 6 - Reusable Components
