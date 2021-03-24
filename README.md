@@ -28,3 +28,40 @@
 ```
 ember generate acceptance-test `test-name`
 ```
+
+## Part 4 - Components
+
+##### Generate a new component test
+```
+ember generate component-test `test-name`
+```
+##### Run tests
+```
+ember t -s
+```
+ - `Component tests` (a.k.a Rendering Tests) render and test a single component at a time, whereas `Acceptance Tests` have to render an entire page and navigate through them.
+
+ ##### Forwarding HTML Attributes with ...attributes
+ Instead of hard-coding specific values for tags such as `alt`, `src`, etc, we use 
+ `...attributes` keyword.
+  - Also known as `splattributes`
+  - Allows arbitrary HTML attributes to be passed in when invoking a component. E.g
+
+##### Using the operator
+```
+<div class='image'>
+  <img ...attributes>
+</div>
+```
+
+##### Enables usage in component
+```
+<div>
+  {...content}
+  <Rental::Image
+    src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg"
+    alt="A picture of Grand Old Mansion"
+  />
+  {...content}
+</div>
+```
