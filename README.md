@@ -109,3 +109,5 @@ export default class RentalImageComponent extends Component {
 </button>
 {{/if}}
 ```
+
+## Part 6 - Reusable Components
