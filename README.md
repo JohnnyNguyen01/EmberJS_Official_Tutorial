@@ -55,7 +55,7 @@ ember t -s
 ```
 
 ##### Enables usage in component
-```
+```hbs
 <div>
   {...content}
   <Rental::Image
@@ -71,3 +71,41 @@ ember t -s
   In general, it is a good idea to add ...attributes to the primary element in your component. This will allow for maximum flexibility, as the invoker may need to pass along classes for styling or ARIA attributes to improve accessibility.
   </em>  
 </strong>
+
+## Part 5 - Interactive Components
+
+Each component can be associated with a JS File that stores and manipulates state.
+Use:
+```
+ember generate component-class `name of component`
+```
+
+- Ember creates an instance of this class whenever the component is invoked.
+- Use `@tracked` decorator to tell ember to <em>listen</em>  to the variable state and re-render on each change.
+- Use `@action` to indicated that we want to use a custom method.
+
+##### Defining actions/custom methodse example
+```js
+export default class RentalImageComponent extends Component {
+  @tracked isLarge = false;
+
+  @action toggleSize() {
+    this.isLarge = !this.isLarge;
+  }
+}
+```
+
+#### Using these in a component
+```hbs
+{{#if this.isLarge}}
+<button type="button" class="image large" {{on "click" this.toggleSize}}>
+    <img ...attributes />
+    <small>View Smaller</small>
+</button>
+{{else}}
+<button type="button" class="image" {{on "click" this.toggleSize}}>
+    <img ...attributes />
+    <small>View Larger</small>
+</button>
+{{/if}}
+```
