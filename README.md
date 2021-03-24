@@ -41,7 +41,7 @@ ember t -s
 ```
  - `Component tests` (a.k.a Rendering Tests) render and test a single component at a time, whereas `Acceptance Tests` have to render an entire page and navigate through them.
 
- ##### Forwarding HTML Attributes with ...attributes
+ ### Forwarding HTML Attributes with ...attributes
  Instead of hard-coding specific values for tags such as `alt`, `src`, etc, we use 
  `...attributes` keyword.
   - Also known as `splattributes`
@@ -65,3 +65,6 @@ ember t -s
   {...content}
 </div>
 ```
+
+`In general, it is a good idea to add ...attributes to the primary element in your component. This will allow for maximum flexibility, as the invoker may need to pass along classes for styling or ARIA attributes to improve accessibility.
+`
