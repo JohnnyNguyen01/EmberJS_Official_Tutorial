@@ -48,7 +48,7 @@ ember t -s
   - Allows arbitrary HTML attributes to be passed in when invoking a component. E.g
 
 ##### Using the operator
-```
+```hbs
 <div class='image'>
   <img ...attributes>
 </div>
