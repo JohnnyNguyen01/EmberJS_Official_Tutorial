@@ -128,3 +128,5 @@ The model hook is responsible for fetching and preparing any data that you need 
 </div>
 ```
 For each model-object defined as 'property' returned from model method...
+
+*Part 1 Complete*
