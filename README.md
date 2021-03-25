@@ -108,4 +108,23 @@ export default class RentalImageComponent extends Component {
 
 ```
 
-## Part 6 - Reusable Components
+## Part 7 - Working With Data
+
+- `Route Files` are where you store route information and fetch/parse data from api's.
+
+#### The Model Hook 
+<p>
+The model hook is responsible for fetching and preparing any data that you need for your route. Ember will automatically call this hook when entering a route, so that you can have an opportunity to run your own code to get the data you need. The object returned from this hook is known as the model for the route (surprise!).
+</p>
+
+##### How to use a for-each loop in hbs:
+```hbs
+<div class="rentals">
+    <ul class="results">
+        {{#each @model as |property|}}
+            <li><Rental @rental={{property}}/></li>
+        {{/each}}
+    </ul>
+</div>
+```
+For each model-object defined as 'property' returned from model method...

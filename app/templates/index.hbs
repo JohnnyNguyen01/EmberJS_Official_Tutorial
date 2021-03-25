@@ -7,8 +7,8 @@
 </Jumbo>
 <div class="rentals">
     <ul class="results">
-        <li><Rental/></li>
-        <li><Rental/></li>
-        <li><Rental/></li>
+        {{#each @model as |property|}}
+            <li><Rental @rental={{property}}/></li>
+        {{/each}}
     </ul>
 </div>
